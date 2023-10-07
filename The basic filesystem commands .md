@@ -7,3 +7,4 @@ It is used to change the current working directory in the terminal.
 It is used to list the contents of the current directory.
 ```cat``` **Concatenate**
 It is used to display the contents of a file in the terminal.
+ 
