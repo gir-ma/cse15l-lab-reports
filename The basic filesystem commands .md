@@ -13,4 +13,4 @@ The ```ls``` command without any argument returned the two folders I have in ```
 is used to display the contents of a file in the terminal.<br> 
 
 ![image](cat.png) <br>
-When I use the ```cat``` command without no argument in home working directory, it returns an empty line. When I pass path to directory, it return that it a directroy. But when I pass a path to a file as an argument it displayed the message in the file.
+When I use the ```cat``` command without no argument in home working directory, it returns an empty line. When I pass path to directory, it return that it a directroy. But when I pass a path to a file as an argument it displayed the message in the file. 
