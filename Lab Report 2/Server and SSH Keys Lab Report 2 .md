@@ -8,10 +8,16 @@ _Which methods in your code are called?_<br>
 The relevant method called is ```handleRequest(URI url)``` in the Handler class.
 
 _What are the relevant arguments to those methods, and the values of any relevant fields of the class?_<br>
-The relevant arguments to this method is URI url with the value of ```/add-message?s=Hello``` after parsing, it is:<br>
-```https://0-0-0-0-4040-67ngtfgbqik0ktlqm9fodh94i4.us.edusercontent.com/add-message?s=Hello```
+The relevant field values in the Handler class before the request are:<br>
+
+```st``` is "Hello"<br>
+```num``` is 0<br>
+```newvalue``` is an empty string.<br>
 
 _How do the values of any relevant fields of the class change from this specific request?_<br>
+The method checks if the path of the url is ```/```, it proceeds to the else block because its not the case here.
+It checks if the path contains ```/add-message``` which is true now.
+It splits the query string into parameters, ```parameters[0]``` is ```s``` and ```parameters[1]``` is ```Hello```.
 
 ```String st``` is changed to "Hello" because it's assigned the value from the URL parameter s=Hello.<br>
 ```int num``` is incremented by 1 because of the line ```num++;```. The current value of num is 1.<br>
@@ -22,19 +28,27 @@ _How do the values of any relevant fields of the class change from this specific
 ## ```/add-message?s=How are you```<br>
 ![image](add_message_two.png)<br>
 _Which methods in your code are called?_<br>
-The relevant method called is ```handleRequest(URI url)``` in the Handler class.
+The relevant method called is ```public String handleRequest(URI url)``` in the Handler class.
 
 _What are the relevant arguments to those methods, and the values of any relevant fields of the class?_<br>
-The relevant arguments to this method is URI url with the value of ```/add-message?s=How are you``` after parsing, it is:<br>
-```[https://0-0-0-0-4040-67ngtfgbqik0ktlqm9fodh94i4.us.edusercontent.com/add-message?s=Hello](https://0-0-0-0-4545-67ngtfgbqikoktlqm9fodh9414.us.edusercontent.com/add-message?s=How%20are%20you)```
+The relevant field values in the Handler class before this request are:<br>
+```st``` is "Hello"<br>
+```num``` is 1 (as it was incremented in the previous request)<br>
+```newvalue``` is "1. Hello\n"<br>
 
 _How do the values of any relevant fields of the class change from this specific request?_<br>
+The method checks if the path of the url is ```/```, which is not the case in this request, so it proceeds to the else block. 
+It checks if the path contains ```/add-message```.
+It splits the query string into parameters, where parameters[0] is "s" and parameters[1] is "How are you."<br>
 
-```String st``` is changed to "How are you" because it's assigned the value from the URL parameter ```s=How are you```.<br>
+```st``` remains "Hello"<br>
 ```int num``` is incremented by 1 because of the line ```num++;```, now the value is stored as ```2```.<br>
+```String newvalue``` is "1. Hello\n2. How are you\n"<br>
+
 ```String newvalue``` is modified to include a new line that contains the updated message because of this lines again:<br>
-```String value = num + ". " + st + "\n";```<br>
+```String value = num + ". " + parameter[1] + "\n";```<br>
 ```newvalue += value;```<br>
+
 
 **Part_Two**
 The path to the private key for my SSH key for logging into ieng6 from my computer<br>
