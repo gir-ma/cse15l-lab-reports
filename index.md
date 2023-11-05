@@ -1,6 +1,6 @@
-my group memebers are 
-*Spandan
-*Muhammad
-*Wilson
-*Katrina
-*Anna
+my group memebers are<br> 
+* Spandan
+* Muhammad
+* Wilson
+* Katrina
+* Anna
