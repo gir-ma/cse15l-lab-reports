@@ -55,5 +55,5 @@ is used to display the contents of a file in the terminal.<br>
 **with a path to a file as an argument**
 * Working diroctory: ```/home```
 * Explanation: When a path to a file is specified by the cat command, the content inside the file will be printed.
-* Output: the content of the es-mx.txt file
+* Output: The content of the es-mx.txt file
  
