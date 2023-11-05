@@ -24,14 +24,14 @@
 ![image](failure_inducing.png)<br>
   
 * The bug, as the before-and-after code change required to fix it (as two code blocks in Markdown)
-  ```
+```
 static void reverseInPlace(int[] arr) {
      for(int i = 0; i < arr.length; i += 1){
       arr[i] = arr[arr.length - i - 1];
     }
   }
-  ```
-
+```
+* After fixed the bug
 ```
 static void reverseInPlace(int[] arr) {
      for(int i = 0; i < arr.length/2; i += 1){
