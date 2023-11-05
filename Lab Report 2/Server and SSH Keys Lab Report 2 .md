@@ -1,4 +1,4 @@
-# Lab Report 2 - Servers and SSH Keys (Week 3)
+# Servers and SSH Keys (Week 3)
 **Part_One**
 ## StringServer_code<br>
 ![image](StringServerCode.png)<br>
