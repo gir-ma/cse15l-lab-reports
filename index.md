@@ -1,6 +1,6 @@
 my group memebers are 
-**Spandan
-**Muhammad
-**Wilson
-**Katrina
-**Anna
+*Spandan
+*Muhammad
+*Wilson
+*Katrina
+*Anna
