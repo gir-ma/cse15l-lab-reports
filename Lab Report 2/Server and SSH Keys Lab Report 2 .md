@@ -22,7 +22,7 @@ It splits the query string into parameters, ```parameters[0]``` is ```s``` and `
 ```String st``` is changed to "Hello" because it's assigned the value from the URL parameter s=Hello.<br>
 ```int num``` is incremented by 1 because of the line ```num++;```. The current value of num is 1.<br>
 ```String newvalue``` is modified to include a new line that contains the updated message because of the lines:<br>
-```String value = num + ". " + st + "\n";```<br>
+```String value = num + ". " + parameters[1] + "\n";```<br>
 ```newvalue += value;```<br>
 
 ## ```/add-message?s=How are you```<br>
