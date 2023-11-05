@@ -48,4 +48,4 @@ A terminal interaction where you log into ieng6 with your course-specific accoun
 In a couple of sentences, describe something you learned from lab in week 2 or 3 that you didn’t know before.
 
 1. The first thing I learned and am happy about is doing ```ssh``` to connect between different host servers and client laptop.
-2. The other new and cool thing I learned is being able to connect to the servers from my laptops terminal through Virtual Studio Code. 
+2. The other new and cool thing I learned is being able to connect to the servers from my laptops terminal through Visual Studio Code. 
