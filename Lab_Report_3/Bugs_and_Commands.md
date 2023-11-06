@@ -81,7 +81,6 @@ $ find -type f
 ```
 This ```-type``` connected with find command help us to reduce our search scope by the type of the file; in this case it'll return only the files.
 
-
 * ```-size``` limits the search for files by size.<br>
 _example 1_
 ```
