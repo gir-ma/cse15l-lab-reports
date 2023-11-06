@@ -47,7 +47,7 @@ static void reverseInPlace(int[] arr) {
 In this one, it iterates through the first half of the array up to ```arr.length/2```. During each iteration, it swaps the element at index i with the element at the corresponding position from the end ```arr.length - i - 1```. The temporary variable ```temp``` is used to ensure that the original values are not overwritten before they are swapped. So this code reverses the array in correctly without losing data.
 **Part 2 - Researching Commands**
 # 4 interesting command-line options or alternate ways to use the command ```find```
-1. ```-name``` This option is used to search for files and directories by name. It allows you to specify a name or use wildcards to match names.<br>
+* ```-name``` This option is used to search for files and directories by name. It allows you to specify a name or use wildcards to match names.<br>
 _example 1_
 ```
 girma@Gimma MINGW64 ~/Documents/GitHub/docsearch (main)
@@ -56,7 +56,7 @@ $ find -name "chapter-1.txt"
 ```
 
 
-2. ```-type``` this option is used to filter files or directories based on their type (e.g., regular files, directories, symlinks, named pipes, sockets).<br>
+* ```-type``` this option is used to filter files or directories based on their type (e.g., regular files, directories, symlinks, named pipes, sockets).<br>
 _example 1_
 ```
 girma@Gimma MINGW64 ~/Documents/GitHub/docsearch/technical/911report (main)
@@ -82,7 +82,7 @@ $ find -type f
 This ```-type``` connected with find command help us to reduce our search scope by the type of the file; in this case it'll return only the files.
 
 
-3. ```-size``` limits the search for files by size.<br>
+* ```-size``` limits the search for files by size.<br>
 _example 1_
 ```
 girma@Gimma MINGW64 ~/Documents/GitHub/docsearch (main)
@@ -103,7 +103,7 @@ $ find -size +180k
 This limits the size of the file we are looking for. It'll return the files in this terminal those has only less that the given size. 
 
 
-4. ```-mtime``` is used to search for files based on their modification time, allowing you to find files modified within a specific time frame.<br>
+* ```-mtime``` is used to search for files based on their modification time, allowing you to find files modified within a specific time frame.<br>
 _example 1_
 ```
 girma@Gimma MINGW64 ~/Documents/GitHub/docsearch/technical/911report (main)
