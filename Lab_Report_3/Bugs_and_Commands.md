@@ -24,7 +24,7 @@
 ![image](failure_inducing.png)<br>
 I tried to run a test for a buggy code with two diffirent inputs. The first one has four numbers and the test failed ```arrays first differed at element [2]; expected:<2> but was:<3>```; but with the second test I used an input that doesn't induce failure, one digit, and the test returned no failure eventhough we know it has bugs.<br>
   
-* The bug, as the before-and-after code change required to fix it (as two code blocks in Markdown)
+* The bug, as the before-and-after code change required to fix it
   # Before 
 ```
 static void reverseInPlace(int[] arr) {
