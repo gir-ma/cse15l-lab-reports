@@ -176,6 +176,7 @@ $ find -size +800k
 
 * ```-mtime``` is used to search for files based on their modification time, allowing you to find files modified within a specific time frame.<br>
 _example 1_
+
 ```
 girma@Gimma MINGW64 ~/Documents/GitHub/docsearch/technical/911report (main)
 $ find -mtime -1
@@ -184,6 +185,7 @@ $ find -mtime -1
 This command will locate files modified within the past 1 days in 911report directory.<br>
 
 _example 2_
+
 ```
 girma@Gimma MINGW64 ~/Documents/GitHub/docsearch (main)
 $ find -mmin -120
