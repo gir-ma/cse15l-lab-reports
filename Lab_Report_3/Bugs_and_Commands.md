@@ -45,8 +45,8 @@ static void reverseInPlace(int[] arr) {
   }
 ```
 In this one, it iterates through the first half of the array up to ```arr.length/2```. During each iteration, it swaps the element at index i with the element at the corresponding position from the end ```arr.length - i - 1```. The temporary variable ```temp``` is used to ensure that the original values are not overwritten before they are swapped. So this code reverses the array in correctly without losing data.<br>
-**Part 2 - Researching Commands**
-# 4 interesting command-line options or alternate ways to use the command ```find```
+# **Part 2 - Researching Commands**
+**4 interesting command-line options or alternate ways to use the command ```find```**
 * ```-name``` This option is used to search for files and directories by name. It allows you to specify a name or use wildcards to match names.<br>
 _example 1_
 ```
@@ -55,7 +55,8 @@ $ find -name "chapter-1.txt"
 ./technical/911report/chapter-1.txt
 ```
 _example 2_<br>
-Let's say I want to find all files in the project that have "chapter" in their name. We can use the ```-name``` option with a wildcard:
+Let's say I want to find all files in the project that have "chapter" in their name. We can use the ```-name``` option with a wildcard:<br>
+
 ```
 girma@Gimma MINGW64 ~/Documents/GitHub/docsearch (main)
 $ find -name "*chapter*"
@@ -75,8 +76,8 @@ $ find -name "*chapter*"
 ./technical/911report/chapter-7.txt
 ./technical/911report/chapter-8.txt
 ./technical/911report/chapter-9.txt
-
 ```
+
 ```-name "*chapter*"``` This part specifies the search criteria. The asterisks (*) then match any characters, so this command finds all files with "chapter" in their name, regardless of the characters before or after it.
 This is useful for example when I want to locate files with a specific pattern in their name.<br>
 
@@ -186,6 +187,7 @@ This command will locate files modified within the past 1 days in 911report dire
 
 _example 2_
 
+
 ```
 girma@Gimma MINGW64 ~/Documents/GitHub/docsearch (main)
 $ find -mmin -120
@@ -198,6 +200,7 @@ $ find -mmin -120
 ./.git/refs/remotes/upstream
 ./.git/refs/remotes/upstream/HEAD
 ```
+
 This command will find files modified less than 2 hours ago in the home directory. The -mtime option in the find command operates in terms of 24-hour periods. If we need to search for files based on a time frame in hours rather than days, we can use the ```-mmin``` option to search by minutes. we can also adjust the ```+``` and ```-``` sign to specify the given time ago or in less than a given time.<br>
 
 _source_:[https://www.redhat.com/sysadmin/linux-find-command]<br>
