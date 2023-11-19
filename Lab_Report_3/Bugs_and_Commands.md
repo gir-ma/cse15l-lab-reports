@@ -1,6 +1,6 @@
 # Lab Report 3 - Bugs and Commands (Week 5)
 **Part 1 - Bugs**
-* A failure-inducing input for the buggy program, as a JUnit test and any associated code (write it as a code block in Markdown)
+* A failure-inducing input for the buggy program, as a JUnit test and any associated code 
 ```
 @Test 
 	public void testReverseInPlace() {
@@ -10,7 +10,7 @@
 	}
 ``` 
   
-* An input that doesn’t induce a failure, as a JUnit test and any associated code (write it as a code block in Markdown)
+* An input that doesn’t induce a failure, as a JUnit test and any associated code 
 ```
 @Test 
 	public void testReverseInPlace() {
@@ -44,7 +44,7 @@ static void reverseInPlace(int[] arr) {
     }
   }
 ```
-In this one, it iterates through the first half of the array up to ```arr.length/2```. During each iteration, it swaps the element at index i with the element at the corresponding position from the end ```arr.length - i - 1```. The temporary variable ```temp``` is used to ensure that the original values are not overwritten before they are swapped. So this code reverses the array in correctly without losing data.
+In this one, it iterates through the first half of the array up to ```arr.length/2```. During each iteration, it swaps the element at index i with the element at the corresponding position from the end ```arr.length - i - 1```. The temporary variable ```temp``` is used to ensure that the original values are not overwritten before they are swapped. So this code reverses the array in correctly without losing data.<br>
 **Part 2 - Researching Commands**
 # 4 interesting command-line options or alternate ways to use the command ```find```
 * ```-name``` This option is used to search for files and directories by name. It allows you to specify a name or use wildcards to match names.<br>
@@ -54,6 +54,31 @@ girma@Gimma MINGW64 ~/Documents/GitHub/docsearch (main)
 $ find -name "chapter-1.txt"
 ./technical/911report/chapter-1.txt
 ```
+_example 2_<br>
+Let's say I want to find all files in the project that have "chapter" in their name. We can use the ```-name``` option with a wildcard:
+```
+girma@Gimma MINGW64 ~/Documents/GitHub/docsearch (main)
+$ find -name "*chapter*"
+./technical/911report/chapter-1.txt
+./technical/911report/chapter-10.txt
+./technical/911report/chapter-11.txt
+./technical/911report/chapter-12.txt
+./technical/911report/chapter-13.1.txt
+./technical/911report/chapter-13.2.txt
+./technical/911report/chapter-13.3.txt
+./technical/911report/chapter-13.4.txt
+./technical/911report/chapter-13.5.txt
+./technical/911report/chapter-2.txt
+./technical/911report/chapter-3.txt
+./technical/911report/chapter-5.txt
+./technical/911report/chapter-6.txt
+./technical/911report/chapter-7.txt
+./technical/911report/chapter-8.txt
+./technical/911report/chapter-9.txt
+
+```
+```-name "*chapter*"``` This part specifies the search criteria. The asterisks (*) then match any characters, so this command finds all files with "chapter" in their name, regardless of the characters before or after it.
+This is useful for example when I want to locate files with a specific pattern in their name.<br>
 
 
 * ```-type``` this option is used to filter files or directories based on their type (e.g., regular files, directories, symlinks, named pipes, sockets).<br>
@@ -80,6 +105,44 @@ $ find -type f
 ./preface.txt
 ```
 This ```-type``` connected with find command help us to reduce our search scope by the type of the file; in this case it'll return only the files.
+_example 2_<br>
+To find all directories in my project. I can use the ```-type``` option with the argument ```d``` to filter for directories:
+```
+girma@Gimma MINGW64 ~/Documents/GitHub/docsearch (main)
+$ find -type d
+.
+./.git
+./.git/hooks
+./.git/info
+./.git/logs
+./.git/logs/refs
+./.git/logs/refs/heads
+./.git/logs/refs/remotes
+./.git/logs/refs/remotes/origin
+./.git/logs/refs/remotes/upstream
+./.git/objects
+./.git/objects/info
+./.git/objects/pack
+./.git/refs
+./.git/refs/heads
+./.git/refs/remotes
+./.git/refs/remotes/origin
+./.git/refs/remotes/upstream
+./.git/refs/tags
+./lib
+./technical
+./technical/911report
+./technical/biomed
+./technical/government
+./technical/government/About_LSC
+./technical/government/Alcohol_Problems
+./technical/government/Env_Prot_Agen
+./technical/government/Gen_Account_Office
+./technical/government/Media
+./technical/government/Post_Rate_Comm
+./technical/plos
+```
+```-type d``` specifies the search criteria, it filters for directories, so this command finds and lists only directories in the specified location. This is useful when we want to focus specifically on directories and exclude regular files from the search results.<br>
 
 * ```-size``` limits the search for files by size.<br>
 _example 1_
@@ -99,8 +162,17 @@ $ find -size +180k
 ./technical/government/Gen_Account_Office/pe1019.txt
 ./technical/government/Gen_Account_Office/Statements_Feb28-1997_volume.txt
 ```
-This limits the size of the file we are looking for. It'll return the files in this terminal those has only less that the given size. 
+This limits the size of the file we are looking for. It'll return the files in this terminal those has only less that the given size.<br> 
 
+_example 2_
+
+```
+girma@Gimma MINGW64 ~/Documents/GitHub/docsearch (main)
+$ find -size +800k
+./.git/objects/pack/pack-9155f305b04899d32718c159a69aedd038c25dbf.pack
+```
+
+```-size +800M``` This part specifies the search criteria. The ```+``` before 800M means files larger than 800 megabytes. This command will find and list all files in the current directory and its subdirectories that are larger than 800 megabytes. 
 
 * ```-mtime``` is used to search for files based on their modification time, allowing you to find files modified within a specific time frame.<br>
 _example 1_
@@ -109,6 +181,23 @@ girma@Gimma MINGW64 ~/Documents/GitHub/docsearch/technical/911report (main)
 $ find -mtime -1
 ./chapter-1.txt
 ```
-This command will locate files modified within the past 1 days in 911report directory
+This command will locate files modified within the past 1 days in 911report directory.<br>
 
-_source_:[https://www.redhat.com/sysadmin/linux-find-command]
+_example 2_
+```
+girma@Gimma MINGW64 ~/Documents/GitHub/docsearch (main)
+$ find -mmin -120
+./.git/FETCH_HEAD
+./.git/logs/refs/remotes/origin/HEAD
+./.git/logs/refs/remotes/upstream/HEAD
+./.git/objects
+./.git/refs/remotes/origin
+./.git/refs/remotes/origin/HEAD
+./.git/refs/remotes/upstream
+./.git/refs/remotes/upstream/HEAD
+```
+This command will find files modified less than 2 hours ago in the home directory. The -mtime option in the find command operates in terms of 24-hour periods. If we need to search for files based on a time frame in hours rather than days, we can use the ```-mmin``` option to search by minutes. we can also adjust the ```+``` and ```-``` sign to specify the given time ago or in less than a given time.<br>
+
+_source_:[https://www.redhat.com/sysadmin/linux-find-command]<br>
+ChatGPT,  
+prompt: "How can we use the command find -time with different time frame like days and hours?"
