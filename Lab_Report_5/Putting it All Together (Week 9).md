@@ -19,7 +19,7 @@ Here is the screenshot of my output.</p>
 ![image](L5_error_fixing.png)<br>
 
 _Information needed about the setup:_<br>
-    + I used the code we used for lab 3 [https://github.com/gir-ma/lab3.git] this file contains ```ArrayTests.java```,  ```ArrayExamples.class```, ```ArrayExamples.java ```, ```ArrayTest.class ```, ```ArrayTest.java```, ```CommandScript.sh```.<br>
+   + I used the code we used for lab 3 [https://github.com/gir-ma/lab3.git] this file contains ```ArrayTests.java```,  ```ArrayExamples.class```, ```ArrayExamples.java ```, ```ArrayTest.class ```, ```ArrayTest.java```, ```CommandScript.sh```.<br>
    
    + The snippet of the code with bug before fixing the bug is: <br>
   
@@ -38,13 +38,17 @@ _Information needed about the setup:_<br>
   }
 ```
    + The full command line (or lines) you ran to trigger the bug<br>
-I ran the bash command with 
+   
+I ran the bash command with<br>
+
 ```
 set -e 
 javac -cp ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" *.java
 java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore ArrayTests
 ```
+
 This also trigers the ```ArrayTest``` class which uses the method<br>
+
 ```
    
   @Test
@@ -55,12 +59,15 @@ This also trigers the ```ArrayTest``` class which uses the method<br>
       assertEquals(expectedValue, ArrayExamples.averageWithoutLowest(input2), delta);
   }
 ```
+
 The exact loop in the ```ArrayExample``` class that couse this error is<br>
+
 ```
 for(double num: arr) {
       if(num == lowest) { lowest = num; }
     }
 ```
+  
   + A description of what to edit to fix the bug<br>
 To fix the bug following the TA's response I updated the loop like the following,<br>
    
@@ -71,6 +78,7 @@ To fix the bug following the TA's response I updated the loop like the following
       System.out.println("Updated lowest value: " + lowest);
     }
 ```
+
 Then I fixed the line as follow and got the right output.<br>
 
 ```
@@ -80,7 +88,9 @@ Then I fixed the line as follow and got the right output.<br>
       System.out.println("Updated lowest value: " + lowest);
     }
 ```
+
 Output after fixing the bug:<br>
 ![image](L5_error_fixed.png)<br> 
+
 **Part 2 – Reflection**<br>
 In the second half of this quarter, I delved into learning Vim, a powerful text editor with a steep but rewarding learning curve. I discovered various commands and functionalities that significantly improved my coding efficiency. Additionally, I explored the use of the Java Debugger (jdb) for debugging, particularly employing breakpoints to analyze and troubleshoot code execution. These skills not only enhanced my coding workflow but also provided valuable insights into effective debugging practices.
