@@ -3,10 +3,9 @@
 Design a debugging scenario, and write your report as a conversation on EdStem. It should have:<br>
 
 <div class="message" style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; margin: 10px 0;">
-  <p><strong>Student:</strong> Hi there! For my Lab_report 3 I'm trying to do add a method to the ArrayExamples class, with this class I wanted to calculate average without the lowest value. But its not passing my test code. I've attached the error output I got from the test.
-![image](L5_error.png)
-</p>
+  <p><strong>Student:</strong> Hi there! For my Lab_report 3 I'm trying to do add a method to the ArrayExamples class, with this class I wanted to calculate average without the lowest value. But its not passing my test code. I've attached the error output I got from the test.</p>
 </div>
+ ![image](L5_error.png) 
 <div class="message" style="background-color: #d3e5fc; padding: 10px; border-radius: 5px; margin: 10px 0; text-align: right;">
   <p><strong>TA:</strong> Hello! Have you tried printing out the values before and after the loop where the bug is located. Let me know wheather you have unother question and what you find from your output</p>
 </div>
